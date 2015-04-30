@@ -30,6 +30,7 @@
 				<li class="views"><img src="img/view.png"><span>{{item.stats.views}}</span></li>
 			</ul>
 		</div>
+		<div class="price"><span class="nis">&#8362;</span>{{item.price}}</div>
 		<ul class="tags">
 			<li ng-repeat="tag in item.tags" class="tag {{tag}}" ng-click="setTag('{{tag}}')" data-tooltip="{{tag}}"></li>
 		</ul>

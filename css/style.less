@@ -13,7 +13,7 @@ html, body, header, footer,p, h1, h2, h3, figure, figcaption, ul, article{
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, p, span{
+h1, h2, h3, p, span, div, figcaption, figure, img, form, fieldset, input, textarea{
     &:extend(.selection all);
 }
 a{
@@ -356,8 +356,8 @@ main{
         height: 60px;
         bottom: 0;
         z-index: 3;
-        background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-        background-image:         linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8) 50%, rgba(0, 0, 0, 1));
+        background-image:         linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8) 50%, rgba(0, 0, 0, 1));
         cursor: pointer;
     }
     figure{
@@ -377,7 +377,7 @@ main{
         padding: 0 .5em;
         left: 0;
         font-size: 1.2em;
-        bottom: 31.3px;
+        bottom: 28px;
         z-index: 4;
         cursor: pointer;
         -webkit-transition: all .5s ease-out;
@@ -401,6 +401,18 @@ main{
         }
         img{
             vertical-align: text-bottom;
+        }
+    }
+    .price{
+        position: absolute;
+        bottom: 0;
+        margin: 0 .2em;
+        right: 0;
+        font-size: 2em;
+        font-family: "Open Sans", sans-serif;
+        z-index: 4;
+        .nis{
+            font-size: .5em;
         }
     }
     .tags{
@@ -432,13 +444,14 @@ main{
         width: 100%;
         position: absolute;
         box-sizing: border-box;
-        bottom: 0;
+        bottom: 4px;
         padding: 4em 1em 1em;
-        background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-        background-image:         linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        font-size: 1.3em;
+        background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, .95) 65%);
+        background-image:         linear-gradient(to bottom, transparent, rgba(0, 0, 0, .95) 65%);
         span{
             display: block;
-            font-size: 1.3em;
+            font-weight: bold;
         }
     }
     .paging{
@@ -446,7 +459,7 @@ main{
         position: absolute;
         box-sizing: border-box;
         text-align: center;
-        bottom: 100px;
+        bottom: 0;
         .pager{
             width: 15px;
             height: 15px;
@@ -460,6 +473,18 @@ main{
             &:hover{
                 opacity: 1;
             }
+        }
+    }
+    .price{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0 .2em;
+        font-size: 2em;
+        font-family: "Open Sans", sans-serif;
+        z-index: 4;
+        .nis{
+            font-size: .5em;
         }
     }
     

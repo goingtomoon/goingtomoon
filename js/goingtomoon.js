@@ -51,7 +51,6 @@ goingToMoon.controller("ItemsCtrl", ["$scope", "$firebase",
 	    }
 
 		$scope.setTag = function(tag) {
-			alert(tag);
 			$scope.tag = tag;
 	    }
 
@@ -93,6 +92,7 @@ goingToMoon.controller("ItemDetailsCtrl", ["$scope", "$firebase", "$routeParams"
 				$timeout(function() {
 					$scope.name = snapshot.val().name;
 					$scope.description = snapshot.val().description;
+					$scope.price = snapshot.val().price;
 					$scope.images = snapshot.val().images;
 					$scope.comments = snapshot.val().comments;
 
@@ -105,7 +105,6 @@ goingToMoon.controller("ItemDetailsCtrl", ["$scope", "$firebase", "$routeParams"
 		});
 
 		$scope.setImage = function(imgURL){
-			console.log(imgURL);
 			$scope.mainImage = imgURL;
 		}
 
