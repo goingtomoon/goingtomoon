@@ -1,0 +1,36 @@
+<section id="itemDetails" class="scroll">
+	<figure>
+		<img ng-src={{mainImage}} />
+		<figcaption>
+			<span>{{name}}</span>
+			{{description}}
+		</figcaption>
+		<div class="paging">
+			<ul>
+				<li ng-repeat="img in images" class="pager" ng-click="setImage(img)"></li>
+			</ul>
+		</div>
+	</figure>
+
+	<div class="wrapper">
+		<section class="toolbar">
+			<div>
+				<button scroll-on-click href="#contact" class="span_2of4">I want this thing</button>
+				<a class="button span_2of4" href="#/items">Show me more</a>
+			</div>
+			<form ng-show="allowAddComment" name="newComment" ng-submit="addComment(comment)" novalidate>
+				<input type="text" ng-model="comment.author" name="author" placeholder="Name" required ng-class="invalid">
+				<textarea ng-model="comment.comment" name="comment" placeholder="Your thoughts" required ng-class="invalid"></textarea>
+				<input type="submit" value="Shoot">
+			</form>
+		</section>
+
+		<section>
+			<gtm-comment ng-repeat="comment in comments" class="comment"></gtm-comment>
+			<!-- <article ng-repeat="comment in comments" class="comment">
+				<h3>{{comment.author}}<span> {{comment.timestamp | date:'dd/MM, HH:mm'}}</span></h3>
+				<p>{{comment.comment}}</p>
+			</article> -->
+		</section>
+	</div>
+</section>
