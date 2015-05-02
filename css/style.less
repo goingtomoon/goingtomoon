@@ -348,7 +348,7 @@ main{
     overflow: hidden;
     border-radius: 5px;
     z-index: 3;
-    &:extend(.fadeInDown all);    
+    &:extend(.fadeInDown all);
     &:hover{
         img{
         	-webkit-transform: scale3d(1.12, 1.12, 1);
@@ -464,8 +464,10 @@ main{
         bottom: 4px;
         padding: 4em 1em 1em;
         font-size: 1.3em;
-        background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, .95) 65%);
-        background-image:         linear-gradient(to bottom, transparent, rgba(0, 0, 0, .95) 65%);
+        // background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, .95) 65%);
+        // background-image:         linear-gradient(to bottom, transparent, rgba(0, 0, 0, .95) 65%);
+        background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 1));
+        background-image:         linear-gradient(to bottom, transparent, rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 1));
         span{
             display: block;
             font-weight: bold;
