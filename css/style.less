@@ -349,6 +349,19 @@ main{
     border-radius: 5px;
     z-index: 3;
     &:extend(.fadeInDown all);    
+    &:hover{
+        img{
+        	-webkit-transform: scale3d(1.12, 1.12, 1);
+	                transform: scale3d(1,12, 1.12, 1);
+        }
+        figcaption{
+            bottom: 28px;
+        }        
+        .toolbar{
+            bottom: 0;
+            opacity: 1;
+        }
+    }
     
     .overlay{
         position: absolute;
@@ -356,8 +369,8 @@ main{
         height: 60px;
         bottom: 0;
         z-index: 3;
-        background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8) 50%, rgba(0, 0, 0, 1));
-        background-image:         linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8) 50%, rgba(0, 0, 0, 1));
+        background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 1));
+        background-image:         linear-gradient(to bottom, transparent, rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 1));
         cursor: pointer;
     }
     figure{
@@ -366,29 +379,33 @@ main{
         img{
             width: 100%;
             border-radius: 5px 5px 0 0;
+        	-webkit-transition: -webkit-transform 350ms;
+	                transition:         transform 350ms;
+    	    -webkit-transform: scale3d(1, 1, 1);
+	                transform: scale3d(1, 1, 1);
         }
         cursor: pointer;
-    }
-    .overlay:hover + figure figcaption, figure:hover figcaption{
-        bottom: 40px;
     }
     figcaption{
         position: absolute;
         padding: 0 .5em;
         left: 0;
         font-size: 1.2em;
-        bottom: 28px;
+        bottom: 5px;
         z-index: 4;
         cursor: pointer;
-        -webkit-transition: all .5s ease-out;
-                transition: all .5s ease-out;
+        -webkit-transition: all 250ms ease-out;
+                transition: all 250ms ease-out;
     }
 
     .toolbar{
         position: absolute;
         z-index: 4;
-        bottom: 0;
         padding: .5em .25em;
+        bottom: -20px;
+        opacity: 0;
+        -webkit-transition: all 250ms ease-out;
+                transition: all 250ms ease-out;
         li{
             opacity: .95;
             margin-right: .5em;
