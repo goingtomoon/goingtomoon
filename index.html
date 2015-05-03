@@ -5,8 +5,6 @@
 	<title>We're going to the moon</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-animate.min.js"></script>-->
 </head>
 <body id="body">
 	<header>
@@ -23,7 +21,7 @@
 				<p animate-on-scroll class="spaceship">Build the coolest spaceship ever</p>
 				<p animate-on-scroll class="equipment">Shop for some moon accessories</p>
 				<div animate-on-scroll class="announcement">
-					<h2>In preperation for our new lunar habitat, everything must go!</h2>
+					<h2>In preparation for our new lunar habitat, everything must go!</h2>
 					<p>Our rocket is tiny and we've gotta pack light. Help us lighten our load and fund our trip!</p>
 				</div>
 				<button scroll-on-click href=".scroll" class="primary">Woohoo!</button>
@@ -37,10 +35,9 @@
 			<div class="width">
 				<div animate-on-scroll class="announcement">
 					<h2>Something caught your eye?</h2>
-				<!-- <p>Drop us a line to reserve an item, to price haggle, or to let us know that you love our snazzy web design skills.</p> -->
-					<p>Drop us a line to reserve an item, to price haggle, or to let us know how awesome you think we are.</p>
+					<p>Drop us a line to reserve an item or if you have any questions.</p>
 				</div>
-				<form class="span_1of4" name="feedback" ng-submit="sendFeedback(feedback)" novalidate>
+				<form class="span_1of4" id="feedback" name="feedback" ng-submit="sendFeedback(feedback)" novalidate>
 					<fieldset>
 						<input type="text" ng-model="feedback.name" name="user" placeholder="Name" required>
 						<input type="text" ng-model="feedback.email" name="mail" placeholder="Email" required>

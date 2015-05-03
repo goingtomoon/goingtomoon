@@ -1,7 +1,3 @@
-//todo minify js
-//		analytics
-//		network error handling
-
 var goingToMoon = angular.module("goingToMoon", ["firebase", "ngRoute"]);
 
 // register work which should be performed when the injector is done loading all modules
@@ -146,7 +142,7 @@ goingToMoon.controller("contactCtrl", ["$scope", "$firebase",
 				  message: feedback.message,
 				  timestamp: Firebase.ServerValue.TIMESTAMP
 				});
-				$scope.allowAddComment = false;
+				$("#feedback").css("opacity", "0");
 			}
 		}
 
@@ -157,9 +153,16 @@ goingToMoon.directive("animateOnScroll", function() {
 	return {
 		restrict: "A",
 		link: function(scope, el, attrs) {
+			var bottom = $(window).scrollTop() + $(window).height();
+			var item = $(el).offset().top + $(el).height();
+
+			if ($(el).is(".item"))
+				if (item - 100 < bottom)
+					$(el).addClass("fadeIn");
+
 			$(window).scroll( function(){
-				var bottom = $(window).scrollTop() + $(window).height();
-		        var item = $(el).offset().top + $(el).height();
+				bottom = $(window).scrollTop() + $(window).height();
+		        item = $(el).offset().top + $(el).height();
 
 		        //refactor
 		        if ($(el).is(".item")){

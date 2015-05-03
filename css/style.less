@@ -372,6 +372,21 @@ main{
         background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 1));
         background-image:         linear-gradient(to bottom, transparent, rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 1));
         cursor: pointer;
+        &.sold{
+            height: 100%;
+            background-image: none;
+            background-image: none;
+            background-color: rgba(0, 0, 0, .8);
+            cursor: default;
+        }
+    }
+    .sold-caption{
+        position: absolute;
+        width: 100%;
+        bottom: 75px;
+        font-size: 1.3em;
+        cursor: default;
+        z-index: 3;
     }
     figure{
         width: 230px;
