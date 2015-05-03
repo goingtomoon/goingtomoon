@@ -134,7 +134,7 @@ goingToMoon.controller("ItemDetailsCtrl", ["$scope", "$firebase", "$routeParams"
 ]);
 
 goingToMoon.controller("contactCtrl", ["$scope", "$firebase",
-	function($scope, $firebase, $routeParams) {
+	function($scope, $firebase) {
 		$scope.sendFeedback = function(feedback){
 			if ($scope.feedback.$valid){
 				var fb = new Firebase("https://crackling-fire-2235.firebaseio.com/feedback");
@@ -192,7 +192,7 @@ goingToMoon.directive("scrollOnClick", function() {
   	}
 });
 
-goingToMoon.directive("gtmComment", function($window) {
+goingToMoon.directive("gtmComment", function() {
 	return {
 		restrict: "E",
     	template: "<h3>{{comment.author}}<span> {{comment.timestamp | date:'dd/MM, HH:mm'}}</span></h3>" +
