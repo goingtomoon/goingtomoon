@@ -1,6 +1,6 @@
 <main id="main" class="scroll span_3of4">
 	<div ng-repeat="item in items" class="item" animate-on-scroll>
-		<a href="#/items/{{item.$id}}?scrollTo=details" ng-click="setViews(item.$id)">
+		<a href="#/items/{{item.$id}}?scrollTo=itemDetails" ng-click="setViews(item.$id)">
 			<div class="overlay" ng-class="{sold: item.sold == '1'}"></div>
 			<div class="sold-caption" ng-show="{{item.sold == '1'}}" ><span>Found a new home</span></div>
 			<figure>
