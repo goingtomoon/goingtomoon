@@ -1,1 +1,25 @@
-<main id="main" class="scroll span_3of4"><div ng-repeat="item in items" class="item" animate-on-scroll><a href="#/items/{{item.$id}}" ng-click="setViews(item.$id)"><div class="overlay" ng-class="{sold: item.sold=='1'}"></div><div class="sold-caption" ng-show="{{item.sold=='1'}}" ><span>Found a new home</span></div><figure><img ng-src={{item.img}}/><figcaption>{{item.name}}</figcaption></figure></a><div class="toolbar"><ul><li class="hearts" ng-show="hasStorage" ng-click="toggleStar(item.$id)"><img src="img/heart_off.png" ng-show="!isStarred(item.$id)"><img src="img/heart_on.png" ng-show="isStarred(item.$id)"><span>{{item.stats.stars}}</span></li><li class="comments"><img src="img/bubble.png"><span>{{item.stats.comments}}</span></li><li class="views"><img src="img/view.png"><span>{{item.stats.views}}</span></li></ul></div><div class="price"><span class="nis">&#8362;</span>{{item.price}}</div></div></main>
+<main id="main" class="scroll span_3of4">
+	<div ng-repeat="item in items" class="item" animate-on-scroll>
+		<a href="#/items/{{item.$id}}" ng-click="setViews(item.$id)">
+			<div class="overlay" ng-class="{sold: item.sold == '1'}"></div>
+			<div class="sold-caption" ng-show="{{item.sold == '1'}}" ><span>Found a new home</span></div>
+			<figure>
+				<img ng-src={{item.img}} />
+				<figcaption>{{item.name}}</figcaption>
+			</figure>
+		</a>
+		
+		<div class="toolbar">
+			<ul>
+				<li class="hearts" ng-show="hasStorage" ng-click="toggleStar(item.$id)">
+					<img src="img/heart_off.png" ng-show="!isStarred(item.$id)">
+					<img src="img/heart_on.png" ng-show="isStarred(item.$id)">
+					<span>{{item.stats.stars}}</span>
+				</li>
+				<li class="comments"><img src="img/bubble.png"><span>{{item.stats.comments}}</span></li>
+				<li class="views"><img src="img/view.png"><span>{{item.stats.views}}</span></li>
+			</ul>
+		</div>
+		<div class="price"><span class="nis">&#8362;</span>{{item.price}}</div>
+	</div>
+</main>
