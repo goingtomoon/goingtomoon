@@ -1,19 +1,21 @@
 var goingToMoon = angular.module("goingToMoon", ["firebase", "ngRoute"]);
 
 // register work which should be performed when the injector is done loading all modules
-goingToMoon.run(function($rootScope, $timeout) {
-	$rootScope.showTitle = false;
-    $timeout(function() {
-    	$rootScope.showTitle = !$rootScope.showTitle;
-    }, 1000);
+goingToMoon.run(["$rootScope", "$timeout",
+	function($rootScope, $timeout) {
+		$rootScope.showTitle = false;
+	    $timeout(function() {
+	    	$rootScope.showTitle = !$rootScope.showTitle;
+	    }, 1000);
 
-    //check for localStorage support
-    if(typeof(Storage) !== "undefined") {
-    	$rootScope.hasStorage = true;
-	} else {
-		$rootScope.hasStorage = false;
+	    //check for localStorage support
+	    if(typeof(Storage) !== "undefined") {
+	    	$rootScope.hasStorage = true;
+		} else {
+			$rootScope.hasStorage = false;
+		}
 	}
-});
+]);
 
 goingToMoon.config(["$routeProvider",
 	function($routeProvider) {
@@ -132,7 +134,7 @@ goingToMoon.controller("ItemDetailsCtrl", ["$scope", "$firebase", "$routeParams"
 ]);
 
 goingToMoon.controller("contactCtrl", ["$scope", "$firebase",
-	function($scope, $firebase, $routeParams) {
+	function($scope, $firebase) {
 		$scope.sendFeedback = function(feedback){
 			if ($scope.feedback.$valid){
 				var fb = new Firebase("https://crackling-fire-2235.firebaseio.com/feedback");
@@ -190,7 +192,7 @@ goingToMoon.directive("scrollOnClick", function() {
   	}
 });
 
-goingToMoon.directive("gtmComment", function($window) {
+goingToMoon.directive("gtmComment", function() {
 	return {
 		restrict: "E",
     	template: "<h3>{{comment.author}}<span> {{comment.timestamp | date:'dd/MM, HH:mm'}}</span></h3>" +
