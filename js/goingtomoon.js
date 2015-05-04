@@ -2,7 +2,7 @@ var goingToMoon = angular.module("goingToMoon", ["firebase", "ngRoute"]);
 goingToMoon.run(["$rootScope","$timeout", "$location", "$anchorScroll", "$routeParams",
   function(o,e, $location, $anchorScroll, $routeParams){
     o.showTitle=!1,e(function(){o.showTitle=!o.showTitle},1e3),o.hasStorage="undefined"!=typeof Storage?!0:!1
-    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+    o.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
       $location.hash($routeParams.scrollTo);
       $anchorScroll();  
     });
